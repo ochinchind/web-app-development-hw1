@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    image: hw1-docker-webapp:latest
+    container_name: hw1-webapp
+    ports:
+      - "8080:3000"
+    environment:
+      - PORT=3000
+      - APP_MESSAGE=Hello
+      - NODE_ENV=production
+    restart: unless-stopped
